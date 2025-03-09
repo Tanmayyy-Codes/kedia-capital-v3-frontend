@@ -7,14 +7,14 @@ export const useNewsStore = create((set) => ({
   setSingleNews: (news) => set({ singleNews: news }),
 
   fetchNews: async () => {
-    const res = await fetch("/api/news");
+    const res = await fetch("https://kedia-capital-v3.onrender.com/api/news");
     const data = await res.json();
     console.log("fetch all news -", data);
     set({ news: data.data });
   },
 
   fetchNewsById: async (nid) => {
-    const res = await fetch(`/api/news/${nid}`);
+    const res = await fetch(`https://kedia-capital-v3.onrender.com/api/news/${nid}`);
     const data = await res.json();
     console.log("fetch news by id - ", data);
     if (data.success) {
@@ -33,7 +33,7 @@ export const useNewsStore = create((set) => ({
     ) {
       return { success: false, message: "Please fill in all required fields." };
     }
-    const res = await fetch("/api/news", {
+    const res = await fetch("https://kedia-capital-v3.onrender.com/api/news", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -48,7 +48,7 @@ export const useNewsStore = create((set) => ({
   },
 
   deleteNews: async (nid) => {
-    const res = await fetch(`/api/news/${nid}`, {
+    const res = await fetch(`https://kedia-capital-v3.onrender.com/api/news/${nid}`, {
       method: "DELETE",
     });
     const data = await res.json();
@@ -61,7 +61,7 @@ export const useNewsStore = create((set) => ({
   },
 
   updateNews: async (nid, updatedNews) => {
-    const res = await fetch(`/api/news/${nid}`, {
+    const res = await fetch(`https://kedia-capital-v3.onrender.com/api/news/${nid}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",

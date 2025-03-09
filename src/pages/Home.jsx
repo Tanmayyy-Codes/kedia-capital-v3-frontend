@@ -1,24 +1,11 @@
 import Navbar from "../components/Navbar";
-import { Toaster } from "react-hot-toast";
 
 const Hero = () => {
   return (
     <>
       <Navbar />
-      <section
-        data-aos="fade-up"
-        className="relative flex flex-col items-center justify-center py-24"
-      >
-        {/* Background gradient */}
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-50 to-gray-100 opacity-80"></div>
-
-        {/* Decorative elements */}
-        <div className="absolute top-20 left-10 w-64 h-64 bg-gradient-to-r from-blue-200 to-blue-300 rounded-full filter blur-3xl opacity-20"></div>
-        <div className="absolute bottom-20 right-10 w-64 h-64 bg-gradient-to-r from-blue-300 to-indigo-300 rounded-full filter blur-3xl opacity-20"></div>
-
-        <Toaster position="top-center" />
-
-        <div className="container mx-auto max-w-6xl px-4 relative z-10">
+      <section className="bg-gradient-to-b from-blue-50 to-white flex flex-col items-center justify-center py-24">
+        <div className="container mx-auto max-w-6xl px-4 z-10">
           <div className="space-y-6 text-center">
             <div className="flex flex-col items-center justify-center">
               {/* HERO HEADING with gradient text */}
@@ -93,10 +80,14 @@ const Hero = () => {
             </div>
           </div>
         </div>
-
       </section>
     </>
   );
 };
 
 export default Hero;
+
+
+
+
+
